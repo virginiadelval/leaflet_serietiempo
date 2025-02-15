@@ -34,6 +34,7 @@
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors',
         });
         group_layers.addLayer(osmLayer)
+        
         var GoogleSatelite = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
             opacity: 0.8,
             attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>' +
@@ -42,13 +43,13 @@
         });
         group_layers.addLayer(GoogleSatelite)
 
-        var layer1 = L.tileLayer.wms("http://geoportal.idesa.gob.ar/geoserver/wms?", {
+        var layer1 = L.tileLayer.wms("https://geoservicios3.conae.gov.ar/geoserver/HumedadDeSuelos/wms?", {
             active: true,
-            layers: 'geonode:depto_censo_pobnbi2010_1',
+            layers: 'DSS_MSM_7,
             format: 'image/png',
             transparent: true,
             opacity: 0.6,
-            attribution: '<b>Los datos son tomados mediante servicio WMS de la <a href="http://geoportal.idesa.gob.ar/"> Infraestructura de Datos Espaciales de la Provincia de Salta </a>'
+            attribution: '<b>Los datos son tomados mediante servicio WMS de CONAE </a>'
 
         });
         group_layers.addLayer(layer1)
